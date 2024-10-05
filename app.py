@@ -46,59 +46,128 @@ def combine_features(*features):
 def get_prediction_details(prediction):
     classes_info = {
         0: {
-            "class": "Cacar Air",
-            "signs": ["Ruam kemerahan yang muncul pada kulit di dada, punggung, dan wajah",
-                      "Demam", 
-                      "Kelelahan", 
-                      "Kehilangan selera makan", 
-                      "Sakit kepala"],
-            "source": CDC
+            "class_id": 0,
+            "class": "Chickenpox",
+            "signs": ["Red rash appearing on the skin of the chest, back, and face",
+                    "Fever",
+                    "Fatigue",
+                    "Loss of appetite",
+                    "Headache"],
+            "source": "CDC"
         },
         1: {
-            "class": "Cacar Sapi",
-            "signs": ["Munculnya lesi makula yang terasa nyeri, kemudian menjadi eschar berwarna hitam dan keras dengan pembengkakan dan kemerahan di sekelilingnya",
-                      "Demam", 
-                      "Kelelahan", 
-                      "Muntah", 
-                      "Sakit tenggorokan"],
+            "class_id": 1,
+            "class": "Cowpox",
+            "signs": ["Painful macular lesions that develop into black and hard eschars with swelling and redness around them",
+                    "Fever",
+                    "Fatigue",
+                    "Vomiting",
+                    "Sore throat"],
             "source": "DermNet"
         },
         2: {
-            "class": "Flu Singapura (HFMD)",
-            "signs": ["Luka lepuh di mulut", 
-                      "Ruam pada tangan dan kaki",
-                      "Demam", 
-                      "Sakit tenggorokan"],
-            "source": CDC
+            "class_id": 2,
+            "class": "Hand, Foot, and Mouth Disease (HFMD)",
+            "signs": ["Blister sores in the mouth",
+                    "Rash on hands and feet",
+                    "Fever",
+                    "Sore throat"],
+            "source": "CDC"
         },
         3: {
-            "class": "Sehat",
+            "class_id": 3,
+            "class": "Healthy",
             "signs": [""],
             "source": ""
         },
         4: {
-            "class": "Campak",
+            "class_id": 4,
+            "class": "Measles",
             "signs": [
-                      "Ruam kemerahan"
-                      "Demam tinggi (bisa mencapai lebih dari 40°C)", 
-                      "Batuk", 
-                      "Hidung berair (coryza)", 
-                      "Mata merah dan berair"],
-            "source": CDC
+                    "Red rash",
+                    "High fever (can reach over 40°C)",
+                    "Cough",
+                    "Runny nose (coryza)",
+                    "Red and watery eyes"],
+            "source": "CDC"
         },
         5: {
-            "class": "Cacar Monyet",
-            "signs": ["Muncul ruam yang muncul di berbagai anggota tubuh seperti tangan, kaki, dada, wajah, mulut atau di dekat alat kelamin",
-                      "Demam", 
-                      "Panas dingin", 
-                      "Pembengkakan kelenjar getah bening", 
-                      "Kelelahan", 
-                      "Nyeri otot dan sakit punggung", 
-                      "Sakit kepala", 
-                      "Gejala pernapasan (misalnya sakit tenggorokan, hidung tersumbat, atau batuk)"],
-            "source": CDC
+            "class_id": 5,
+            "class": "Monkeypox",
+            "signs": ["Rash that appears on various parts of the body such as hands, feet, chest, face, mouth, or near the genitals",
+                    "Fever",
+                    "Chills",
+                    "Swollen lymph nodes",
+                    "Fatigue",
+                    "Muscle aches and back pain",
+                    "Headache",
+                    "Respiratory symptoms (e.g., sore throat, nasal congestion, or cough)"],
+            "source": "CDC"
         }
     }
+
+    # Response using Indonesian language, (Upcoming updates)
+    # classes_info = {
+    #     0: {
+    #         "class_id": 0,
+    #         "class": "Cacar Air",
+    #         "signs": ["Ruam kemerahan yang muncul pada kulit di dada, punggung, dan wajah",
+    #                   "Demam", 
+    #                   "Kelelahan", 
+    #                   "Kehilangan selera makan", 
+    #                   "Sakit kepala"],
+    #         "source": CDC
+    #     },
+    #     1: {
+    #         "class_id": 1,
+    #         "class": "Cacar Sapi",
+    #         "signs": ["Munculnya lesi makula yang terasa nyeri, kemudian menjadi eschar berwarna hitam dan keras dengan pembengkakan dan kemerahan di sekelilingnya",
+    #                   "Demam", 
+    #                   "Kelelahan", 
+    #                   "Muntah", 
+    #                   "Sakit tenggorokan"],
+    #         "source": "DermNet"
+    #     },
+    #     2: {
+    #         "class_id": 2,
+    #         "class": "Flu Singapura (HFMD)",
+    #         "signs": ["Luka lepuh di mulut", 
+    #                   "Ruam pada tangan dan kaki",
+    #                   "Demam", 
+    #                   "Sakit tenggorokan"],
+    #         "source": CDC
+    #     },
+    #     3: {
+    #         "class_id": 3,
+    #         "class": "Sehat",
+    #         "signs": [""],
+    #         "source": ""
+    #     },
+    #     4: {
+    #         "class_id": 4,
+    #         "class": "Campak",
+    #         "signs": [
+    #                   "Ruam kemerahan"
+    #                   "Demam tinggi (bisa mencapai lebih dari 40°C)", 
+    #                   "Batuk", 
+    #                   "Hidung berair (coryza)", 
+    #                   "Mata merah dan berair"],
+    #         "source": CDC
+    #     },
+    #     5: {
+    #         "class_id": 5,
+    #         "class": "Cacar Monyet",
+    #         "signs": ["Muncul ruam yang muncul di berbagai anggota tubuh seperti tangan, kaki, dada, wajah, mulut atau di dekat alat kelamin",
+    #                   "Demam", 
+    #                   "Panas dingin", 
+    #                   "Pembengkakan kelenjar getah bening", 
+    #                   "Kelelahan", 
+    #                   "Nyeri otot dan sakit punggung", 
+    #                   "Sakit kepala", 
+    #                   "Gejala pernapasan (misalnya sakit tenggorokan, hidung tersumbat, atau batuk)"],
+    #         "source": CDC
+    #     }
+    # }
     return classes_info.get(prediction, {"class": "Unknown", "signs": [], "source": "N/A"})
 
 # Predict single image
